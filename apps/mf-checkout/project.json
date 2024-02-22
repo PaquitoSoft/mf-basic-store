@@ -1,0 +1,8 @@
+{
+  "name": "mf-checkout",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mf-checkout/src",
+  "projectType": "application",
+  "targets": {},
+  "tags": []
+}

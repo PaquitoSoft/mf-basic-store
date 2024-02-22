@@ -1,13 +1,22 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { BrowserRouter } from 'react-router-dom';
+import { AppHeader, type TShopCart } from '@mf-basic-store/shared-ui';
 
-import NxWelcome from './nx-welcome';
+const dummyShopCart: TShopCart = {
+  id: 0,
+  items: [],
+  totalItems: 0,
+  totalAmount: 0,
+};
 
-export function App() {
+function App() {
   return (
-    <div>
-      <NxWelcome title="mf-shell" />
-    </div>
+    <BrowserRouter>
+      <AppHeader shopCart={dummyShopCart} />
+
+      <div className="max-w-2xl mx-auto py-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h1 className="text-2xl">Here will be the content</h1>
+      </div>
+    </BrowserRouter>
   );
 }
 
