@@ -1,4 +1,5 @@
-import { ProductCard, type TProduct } from '@mf-basic-store/shared-ui';
+import { ProductCard } from '@mf-basic-store/shared-ui';
+import type { TProduct } from '@mf-basic-store/types';
 
 type Props = {
   product: TProduct;

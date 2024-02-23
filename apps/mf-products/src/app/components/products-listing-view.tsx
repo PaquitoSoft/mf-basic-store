@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
-import { ItemsGrid, type TProduct } from '@mf-basic-store/shared-ui';
+import { ItemsGrid } from '@mf-basic-store/shared-ui';
+import type { TProduct } from '@mf-basic-store/types';
 import useProducts from '../hooks/use-products';
 import ProductListingItem from './product-listing-item';
 

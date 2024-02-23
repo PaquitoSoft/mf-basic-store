@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { get } from '@paquitosoft/fetcher';
-import { TProduct } from '@mf-basic-store/shared-ui';
+import { TProduct } from '@mf-basic-store/types';
 
 type ServerData = {
   products: TProduct[];

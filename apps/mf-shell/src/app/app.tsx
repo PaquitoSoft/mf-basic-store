@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
-import { AppHeader, type TShopCart } from '@mf-basic-store/shared-ui';
+import { AppHeader } from '@mf-basic-store/shared-ui';
+import type { TShopCart } from '@mf-basic-store/types';
 
 const dummyShopCart: TShopCart = {
   id: 0,

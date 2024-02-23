@@ -1,4 +1,5 @@
-import { ProductCard, type TShopCartItem } from '@mf-basic-store/shared-ui';
+import { ProductCard } from '@mf-basic-store/shared-ui';
+import type { TShopCartItem } from '@mf-basic-store/types';
 
 type Props = {
   item: TShopCartItem;

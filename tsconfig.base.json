@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mf-basic-store/shared-ui": ["shared-ui/src/index.ts"]
+      "@mf-basic-store/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@mf-basic-store/types": ["libs/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

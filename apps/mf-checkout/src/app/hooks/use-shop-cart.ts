@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { get, post, put, del } from '@paquitosoft/fetcher';
-import { TShopCart } from '@mf-basic-store/shared-ui';
+import { TShopCart } from '@mf-basic-store/types';
 
 type ServerData = {
   shopCart: TShopCart;
