@@ -2,7 +2,6 @@ import {
   createContext,
   useCallback,
   useContext,
-  // useMemo,
   useEffect,
   useState,
   type ReactNode,
@@ -12,8 +11,7 @@ import {
 import { get, post, put, del } from '@paquitosoft/fetcher';
 import { TShopCart } from '@mf-basic-store/types';
 
-// const ENDPOINT_URL = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/shop-cart`;
-const ENDPOINT_URL = `http://localhost:3333/api/shop-cart`;
+const ENDPOINT_URL = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/shop-cart`;
 
 const defaultShopCart = {
   id: -1,

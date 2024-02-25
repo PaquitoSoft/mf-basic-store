@@ -4,8 +4,5 @@
   "sourceRoot": "apps/mf-checkout/src",
   "projectType": "application",
   "targets": {},
-  "tags": [],
-  "env": {
-    "FOO": "bazzzz"
-  }
+  "tags": []
 }

@@ -6,7 +6,7 @@ type ServerData = {
   products: TProduct[];
 };
 
-const ENDPOINT_URL = 'http://localhost:3333/api/product';
+const ENDPOINT_URL = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/product`;
 
 function useProducts() {
   const [products, setProducts] = useState<TProduct[]>([]);

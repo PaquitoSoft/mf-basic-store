@@ -6,14 +6,7 @@ type ServerData = {
   shopCart: TShopCart;
 };
 
-// const ENDPOINT_URL = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/shop-cart`;
-const ENDPOINT_URL = `http://localhost:3333/api/shop-cart`;
-
-console.log({
-  foo: process.env.FOO,
-  vite_foo: import.meta.env.VITE_FOO,
-  ENDPOINT_URL: import.meta.env.VITE_BACKEND_HOST_URL,
-});
+const ENDPOINT_URL = `${import.meta.env.VITE_BACKEND_HOST_URL}/api/shop-cart`;
 
 const defaultShopCart = {
   id: -1,

@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:backend": "nx run backend:serve",
+    "dev:back": "nx run backend:serve",
     "dev:products:watch": "nx run mf-products:build --watch",
     "dev:products:preview": "nx run mf-products:preview",
     "dev:products": "concurrently \"pnpm dev:products:watch\" \"pnpm dev:products:preview\"",
     "dev:checkout:watch": "nx run mf-checkout:build --watch",
     "dev:checkout:preview": "nx run mf-checkout:preview",
     "dev:checkout": "concurrently \"pnpm dev:checkout:watch\" \"pnpm dev:checkout:preview\"",
-    "dev:frontend": "concurrently \"nx run mf-shell:serve\" \"pnpm dev:products:watch\" \"pnpm dev:products:preview\" \"pnpm dev:checkout:watch\" \"pnpm dev:checkout:preview\"",
+    "dev:front": "concurrently \"nx run mf-shell:serve\" \"pnpm dev:products:watch\" \"pnpm dev:products:preview\" \"pnpm dev:checkout:watch\" \"pnpm dev:checkout:preview\"",
     "graph": "nx graph"
   },
   "private": true,
