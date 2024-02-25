@@ -29,13 +29,26 @@ import { badRequest } from '@hapi/boom';
 //   return shopCart;
 // }
 let _shopCart: TShopCart = {
-  id: -1,
+  id: Date.now(),
   items: [],
   totalItems: 0,
   totalAmount: 0,
 };
 const readShopCart = () => _shopCart;
-const writeShopCart = (shopCart: TShopCart) => (_shopCart = shopCart);
+async function writeShopCart(shopCart: TShopCart): Promise<TShopCart> {
+  const totals = shopCart.items.reduce(
+    (acc, item) => {
+      acc.items += item.quantity;
+      acc.amount += item.quantity * item.product.price;
+      return acc;
+    },
+    { items: 0, amount: 0 }
+  );
+  shopCart.totalItems = totals.items;
+  shopCart.totalAmount = totals.amount;
+  _shopCart = shopCart;
+  return shopCart;
+}
 // --------------- END: Helper functions ---------------
 
 export const getCartHandler: RequestHandler = async (_request, response) => {

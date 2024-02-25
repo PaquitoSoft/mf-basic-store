@@ -29,6 +29,9 @@ export default defineConfig({
       exposes: {
         './routes': './src/app/routes.tsx',
       },
+      remotes: {
+        'mf-checkout': 'http://localhost:4302/assets/remoteEntry.js',
+      },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),
   ],

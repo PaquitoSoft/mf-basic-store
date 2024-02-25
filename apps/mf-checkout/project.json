@@ -3,21 +3,9 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/mf-checkout/src",
   "projectType": "application",
-  "targets": {
-    "watch-and-preview": {
-      "builder": "nx/custom",
-      "options": {
-        "build": {
-          "command": "npm run watch",
-          "watch": true
-        },
-        "preview": {
-          "command": "npm run start:preview",
-          "port": "9090",
-          "open": true
-        }
-      }
-    }
-  },
-  "tags": []
+  "targets": {},
+  "tags": [],
+  "env": {
+    "FOO": "bazzzz"
+  }
 }

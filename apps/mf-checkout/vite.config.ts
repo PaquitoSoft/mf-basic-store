@@ -26,7 +26,8 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './routes': './src/app/routes.tsx',
-        './shop-cart-item': './src/app/components/shop-cart-item.tsx',
+        './shop-cart-context-provider':
+          './src/app/components/shop-cart-context.tsx',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),

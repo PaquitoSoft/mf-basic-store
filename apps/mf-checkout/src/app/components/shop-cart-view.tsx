@@ -1,6 +1,6 @@
 import { ItemsGrid } from '@mf-basic-store/shared-ui';
 import ShopCartItem from './shop-cart-item';
-import useShopCart from '../hooks/use-shop-cart';
+import { useShopCart } from './shop-cart-context';
 
 function ShopCartView() {
   const { shopCart, updateInShopCart, removeFromShopCart } = useShopCart();

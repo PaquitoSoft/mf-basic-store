@@ -1,14 +1,10 @@
 import { useCallback } from 'react';
 import { ItemsGrid } from '@mf-basic-store/shared-ui';
 import type { TProduct } from '@mf-basic-store/types';
+// @ts-expect-error TODO: how to type this remote import?
+import { useShopCart } from 'mf-checkout/shop-cart-context-provider';
 import useProducts from '../hooks/use-products';
 import ProductListingItem from './product-listing-item';
-
-const useShopCart = () => ({
-  shopCart: {},
-  addToShopCart: (itemId: number) =>
-    console.log('Adding item to cart:', itemId),
-});
 
 function ProductsListingView() {
   const { products /*, loading, error */ } = useProducts();

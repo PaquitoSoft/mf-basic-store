@@ -7,13 +7,9 @@ import App from './app/app';
 import productRoutes from 'mf-products/routes';
 // @ts-expect-error TODO: how to type this remote import?
 import checkoutRoutes from 'mf-checkout/routes';
+// @ts-expect-error TODO: how to type this remote import?
+import { ShopCartContextProvider } from 'mf-checkout/shop-cart-context-provider';
 
-console.log({
-  productRoutes,
-  checkoutRoutes,
-});
-
-// const router = createBrowserRouter([]);
 const router = createBrowserRouter([
   {
     path: '/',
@@ -27,6 +23,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ShopCartContextProvider>
+      <RouterProvider router={router} />
+    </ShopCartContextProvider>
   </StrictMode>
 );
