@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { TProduct } from './types';
+import type { TProduct } from '@mf-basic-store/types';
 
 type Props = {
   product: TProduct;

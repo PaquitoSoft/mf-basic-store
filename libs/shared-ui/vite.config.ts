@@ -27,6 +27,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
+    target: 'esnext',
     outDir: '../../dist/shared-ui',
     reportCompressedSize: true,
     commonjsOptions: {

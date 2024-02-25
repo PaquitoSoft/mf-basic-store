@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { AppHeader } from '@mf-basic-store/shared-ui';
 import type { TShopCart } from '@mf-basic-store/types';
 
@@ -11,13 +11,13 @@ const dummyShopCart: TShopCart = {
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <AppHeader shopCart={dummyShopCart} />
 
       <div className="max-w-2xl mx-auto py-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h1 className="text-2xl">Here will be the content</h1>
+        <Outlet />
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 

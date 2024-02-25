@@ -6,7 +6,7 @@ type ServerData = {
   products: TProduct[];
 };
 
-const ENDPOINT_URL = '/api/product';
+const ENDPOINT_URL = 'http://localhost:3333/api/product';
 
 function useProducts() {
   const [products, setProducts] = useState<TProduct[]>([]);

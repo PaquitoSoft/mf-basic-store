@@ -1,6 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import federation from '@originjs/vite-plugin-federation';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
@@ -8,16 +9,28 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/apps/mf-checkout',
 
   server: {
-    port: 4200,
+    port: 4202,
     host: 'localhost',
   },
 
   preview: {
-    port: 4300,
+    port: 4302,
     host: 'localhost',
   },
 
-  plugins: [react(), nxViteTsPaths()],
+  plugins: [
+    react(),
+    nxViteTsPaths(),
+    federation({
+      name: 'mf-checkout',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './routes': './src/app/routes.tsx',
+        './shop-cart-item': './src/app/components/shop-cart-item.tsx',
+      },
+      shared: ['react', 'react-dom', 'react-router-dom'],
+    }),
+  ],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -25,6 +38,7 @@ export default defineConfig({
   // },
 
   build: {
+    target: 'esnext',
     outDir: '../../dist/apps/mf-checkout',
     reportCompressedSize: true,
     commonjsOptions: {

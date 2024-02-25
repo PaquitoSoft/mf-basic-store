@@ -1,3 +1,3 @@
-export { default as AppHeader } from './lib/app-header';
-export { default as ProductCard } from './lib/product-card';
-export { default as ItemsGrid } from './lib/items-grid';
+export { default as AppHeader } from './components/app-header';
+export { default as ProductCard } from './components/product-card';
+export { default as ItemsGrid } from './components/items-grid';

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { TShopCart } from './types';
+import type { TShopCart } from '@mf-basic-store/types';
 
 type TAppHeaderProps = {
   shopCart: TShopCart;
