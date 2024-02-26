@@ -3,6 +3,16 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { NativeFederationTypeScriptHost } from '@module-federation/native-federation-typescript/vite';
+
+const moduleFederationConfig = {
+  name: 'mf-shell',
+  remotes: {
+    'mf-products': 'http://localhost:4301/assets/remoteEntry.js',
+    'mf-checkout': 'http://localhost:4302/assets/remoteEntry.js',
+  },
+  shared: ['react', 'react-dom', 'react-router-dom'],
+};
 
 export default defineConfig({
   root: __dirname,
@@ -21,13 +31,9 @@ export default defineConfig({
   plugins: [
     react(),
     nxViteTsPaths(),
-    federation({
-      name: 'mf-shell',
-      remotes: {
-        'mf-products': 'http://localhost:4301/assets/remoteEntry.js',
-        'mf-checkout': 'http://localhost:4302/assets/remoteEntry.js',
-      },
-      shared: ['react', 'react-dom', 'react-router-dom'],
+    federation(moduleFederationConfig),
+    NativeFederationTypeScriptHost({
+      moduleFederationConfig,
     }),
   ],
 
