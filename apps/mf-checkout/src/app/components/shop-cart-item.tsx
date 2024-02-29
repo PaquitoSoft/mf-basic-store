@@ -1,4 +1,4 @@
-import { ProductCard } from '@mf-basic-store/shared-ui';
+import { Button, ProductCard } from '@mf-basic-store/shared-ui';
 import type { TShopCartItem } from '@mf-basic-store/types';
 
 type Props = {
@@ -36,12 +36,9 @@ function ShopCartItem({ item, onQuantityChange, onRemove }: Props) {
               </option>
             ))}
         </select>
-        <button
-          className="btn btn-error btn-sm"
-          onClick={() => onRemove(item.id)}
-        >
+        <Button variant="destructive" onClick={() => onRemove(item.id)}>
           Remove
-        </button>
+        </Button>
       </div>
     </ProductCard>
   );

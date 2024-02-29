@@ -45,6 +45,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     outDir: '../../dist/apps/mf-products',
+    emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
