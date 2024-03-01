@@ -5,3 +5,4 @@ export { default as ItemsGrid } from './components/items-grid';
 
 export { Button } from './components/ds/button';
 export * from './components/ds/select';
+export * from './components/ds/card';

@@ -28,42 +28,26 @@ function ShopCartItem({ item, onQuantityChange, onRemove }: Props) {
           <span className="text-sm">{item.product.price.toFixed(2)}</span>)
         </p>
       </div>
-      <div className="flex justify-between">
-        <Select defaultValue={`${item.quantity}`}>
+      <div className="flex justify-between w-full">
+        <Select
+          value={`${item.quantity}`}
+          onValueChange={(newValue) => {
+            onQuantityChange(item.id, parseInt(newValue));
+          }}
+        >
           <SelectTrigger className="w-[80px]">
-            <SelectValue />
+            <SelectValue>{item.quantity}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               {Array(5)
                 .fill('')
                 .map((_, index) => (
-                  <SelectItem
-                    key={`${item.id}-${index}`}
-                    value={`${(index + 1) * 1000}`}
-                  >
-                    {index + 1}
-                  </SelectItem>
+                  <SelectItem value={`${index + 1}`}>{index + 1}</SelectItem>
                 ))}
             </SelectGroup>
           </SelectContent>
         </Select>
-        {/* <select
-          name="quantity"
-          className="select select-bordered select-sm"
-          defaultValue={item.quantity}
-          onChange={(event) =>
-            onQuantityChange(item.id, parseInt(event.target.value))
-          }
-        >
-          {Array(5)
-            .fill('')
-            .map((_, index) => (
-              <option key={`${item.id}-${index}`} value={index + 1}>
-                {index + 1}
-              </option>
-            ))}
-        </select> */}
         <Button variant="destructive" onClick={() => onRemove(item.id)}>
           Remove
         </Button>

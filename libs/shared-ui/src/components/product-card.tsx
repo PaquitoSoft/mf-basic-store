@@ -1,20 +1,27 @@
 import type { ReactNode } from 'react';
 import type { TProduct } from '@mf-basic-store/types';
+import { Card, CardContent, CardDescription, CardFooter } from './ds/card';
 
 type Props = {
   product: TProduct;
   children: ReactNode;
 };
 
-function ProductCard({ product, children }: Props) {
+function ProductCard(props: Props) {
   return (
-    <div className="group">
-      <div className="w-full aspect-w-1 aspect-h-1 br-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-        <img src={product.image} alt={product.title} />
-      </div>
-      <h3 className="mt-4 text-sm text-gray-700">{product.title}</h3>
-      <div>{children}</div>
-    </div>
+    <Card className="flex flex-col justify-between">
+      <CardContent>
+        <img
+          className="py-8"
+          src={props.product.image}
+          alt={props.product.title}
+        />
+      </CardContent>
+      <CardFooter className="flex-col items-start">
+        <CardDescription>{props.product.title}</CardDescription>
+        {props.children}
+      </CardFooter>
+    </Card>
   );
 }
 
