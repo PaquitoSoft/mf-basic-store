@@ -4,3 +4,4 @@ export { default as ProductCard } from './components/product-card';
 export { default as ItemsGrid } from './components/items-grid';
 
 export { Button } from './components/ds/button';
+export * from './components/ds/select';

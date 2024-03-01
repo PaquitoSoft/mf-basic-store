@@ -1,5 +1,14 @@
-import { Button, ProductCard } from '@mf-basic-store/shared-ui';
+import {
+  Button,
+  ProductCard,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectTrigger,
+  SelectValue,
+} from '@mf-basic-store/shared-ui';
 import type { TShopCartItem } from '@mf-basic-store/types';
+import { SelectItem } from '@radix-ui/react-select';
 
 type Props = {
   item: TShopCartItem;
@@ -20,7 +29,26 @@ function ShopCartItem({ item, onQuantityChange, onRemove }: Props) {
         </p>
       </div>
       <div className="flex justify-between">
-        <select
+        <Select defaultValue={`${item.quantity}`}>
+          <SelectTrigger className="w-[80px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {Array(5)
+                .fill('')
+                .map((_, index) => (
+                  <SelectItem
+                    key={`${item.id}-${index}`}
+                    value={`${(index + 1) * 1000}`}
+                  >
+                    {index + 1}
+                  </SelectItem>
+                ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        {/* <select
           name="quantity"
           className="select select-bordered select-sm"
           defaultValue={item.quantity}
@@ -35,7 +63,7 @@ function ShopCartItem({ item, onQuantityChange, onRemove }: Props) {
                 {index + 1}
               </option>
             ))}
-        </select>
+        </select> */}
         <Button variant="destructive" onClick={() => onRemove(item.id)}>
           Remove
         </Button>

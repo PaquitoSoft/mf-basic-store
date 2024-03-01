@@ -17,6 +17,7 @@
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@paquitosoft/fetcher": "^1.2.0",
+    "@radix-ui/react-select": "^2.0.0",
     "axios": "^1.6.0",
     "body-parser": "^1.20.2",
     "class-variance-authority": "^0.7.0",
